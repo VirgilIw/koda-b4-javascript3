@@ -54,7 +54,7 @@ async function urlTanpaMethod() {
   let panjang = 0; // manual counter untuk isi array
 
   for (let i = 0; i < datas.length; i++) {
-    const namaAsli = datas[i].name;
+    const namaAsli = datas[i].email;
     // console.log(namaAsli);
 
     let namaBaru = "";
