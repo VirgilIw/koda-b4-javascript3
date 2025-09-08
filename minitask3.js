@@ -10,27 +10,27 @@ const queque = (str, time) => {
   return antrian;
 };
 
-// queque("john", 1500)
-//   .then(function (res) {
-//     console.log("ini " + res);
-//     queque("Ed", 2000)
-//       .then(function (res) {
-//         console.log(res);
-//         queque("Jane", 500)
-//           .then(function (res) {
-//             console.log(res);
-//           })
-//           .catch(function (err) {
-//             console.log(err);
-//           });
-//       })
-//       .catch(function (err) {
-//         console.log(err);
-//       });
-//   })
-//   .catch(function (err) {
-//     console.log(err);
-//   });
+queque("john", 1500)
+  .then(function (res) {
+    console.log("ini " + res);
+    queque("Ed", 2000)
+      .then(function (res) {
+        console.log(res);
+        queque("Jane", 500)
+          .then(function (res) {
+            console.log(res);
+          })
+          .catch(function (err) {
+            console.log(err);
+          });
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+  })
+  .catch(function (err) {
+    console.log(err);
+  });
 
 // async
 
