@@ -90,6 +90,38 @@ async function urlTanpaMethod() {
 
 urlTanpaMethod();
 
-fetch(url).then((res) => {
-  res.json().then(datas);
-});
+fetch(url)
+  .then((response) => response.json())
+  .then((datas) => {
+    const pushKeArray = []; // deklarasi di luar loop
+
+    for (let i = 0; i < datas.length; i++) {
+      const namaAsli = datas[i].email;
+      const kapital = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      const kecil = "abcdefghijklmnopqrstuvwxyz";
+      let namaBaru = "";
+
+      for (let j = 0; j < namaAsli.length; j++) {
+        const huruf = namaAsli[j];
+        let ketemu = false;
+
+        for (let k = 0; k < kapital.length; k++) {
+          if (huruf === kapital[k]) {
+            namaBaru += kecil[k]; // ambil huruf kecil sesuai index
+            ketemu = true;
+            break;
+          }
+        }
+
+        if (!ketemu) {
+          namaBaru += huruf; // huruf bukan kapital → tetap
+        }
+      }
+
+      // tambahkan hasil ke array
+      pushKeArray[pushKeArray.length] = namaBaru;
+    }
+
+    console.log(pushKeArray); // array semua email lowercase
+  })
+  .catch((err) => console.error(err));
