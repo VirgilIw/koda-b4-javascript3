@@ -90,6 +90,8 @@ async function urlTanpaMethod() {
 
 urlTanpaMethod();
 
+// then-catch tanpa method
+
 fetch(url)
   .then((response) => response.json())
   .then((datas) => {
